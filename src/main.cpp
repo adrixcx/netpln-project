@@ -2096,7 +2096,7 @@ bool LoadBlockIndex(bool fAllowNew)
         if (fTestNet)
         {
             block.nTime    = 1394285042;             
-            block.nNonce   = 94361;
+            block.nNonce   = 1937766;
         }
 
         //// debug print
