@@ -58,7 +58,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Sign a message to prove you own an AuroraCoin address</source>
+        <source>Sign a message to prove you own an netPLN address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -331,11 +331,11 @@ Are you sure you wish to encrypt your wallet?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Send coins to an AuroraCoin address</source>
+        <source>Send coins to an netPLN address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Sign a message to prove you own an AuroraCoin address</source>
+        <source>Sign a message to prove you own an netPLN address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1117,7 +1117,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Enter an AuroraCoin address (e.g. ANS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <source>Enter an netPLN address (e.g. ANS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1196,7 +1196,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Enter an AuroraCoin address (e.g. ANS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <source>Enter an netPLN address (e.g. ANS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1204,7 +1204,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Enter AuroraCoin signature</source>
+        <source>Enter netPLN signature</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

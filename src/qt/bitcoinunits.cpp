@@ -34,9 +34,9 @@ QString BitcoinUnits::name(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("AUR");
-    case mBTC: return QString("mAUR");
-    case uBTC: return QString("uAUR");
+    case BTC: return QString("NPLN");
+    case mBTC: return QString("mNPLN");
+    case uBTC: return QString("uNPLN");
     default: return QString("???");
     }
 }
@@ -45,9 +45,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("AuroraCoins");
-    case mBTC: return QString("Milli-AuroraCoins (1 / 1,000)");
-    case uBTC: return QString("Micro-AuroraCoins (1 / 1,000,000)");
+    case BTC: return QString("netPLNs");
+    case mBTC: return QString("Milli-netPLNs (1 / 1,000)");
+    case uBTC: return QString("Micro-netPLNs (1 / 1,000,000)");
     default: return QString("???");
     }
 }

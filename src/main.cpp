@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2011-2013 AuroraCoin Developers.
+// Copyright (c) 2011-2013 netPLN Developers.
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -50,7 +50,7 @@ map<uint256, map<uint256, CDataStream*> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "AuroraCoin Signed Message:\n";
+const string strMessageMagic = "netPLN Signed Message:\n";
 
 double dHashesPerSec;
 int64 nHPSTimerStart;
@@ -829,15 +829,15 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
 	// Legacy
-    int64 nSubsidy = 25 * COIN;
-	
-	if (nHeight > 5450)
-		nSubsidy = 12.5 * COIN;
-	
-	if (nHeight == 1)
-		nSubsidy = 10500000 * COIN;
+    int64 nSubsidy = 50 * COIN;
 
-    nSubsidy >>= (nHeight / 420000); // Reward halves every 4 years 
+	if (nHeight > 5450)
+		nSubsidy = 25 * COIN;
+
+	if (nHeight == 1)
+		nSubsidy = 21000000 * COIN;
+
+    nSubsidy >>= (nHeight / 840000); // Reward halves every 4 years 
 
     return nSubsidy + nFees;
 }
@@ -976,7 +976,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         return pindexLast->nBits;
     }
 
-    // AuroraCoin: This fixes an issue where a 51% attack can change difficulty at will.
+    // netPLN: This fixes an issue where a 51% attack can change difficulty at will.
     // Go back the full period unless it's the first retarget after genesis. Code courtesy of Art Forz
     int blockstogoback = nInterval-1;
     if ((pindexLast->nHeight+1) != nInterval)
@@ -1252,7 +1252,7 @@ bool CTransaction::ConnectInputs(MapPrevTx inputs,
 {
     // Take over previous transactions' spent pointers
     // fBlock is true when this is called from AcceptBlock when a new best-block is added to the blockchain
-    // fMiner is true when called from the internal AuroraCoin miner
+    // fMiner is true when called from the internal netPLN miner
     // ... both are false when called from CTransaction::AcceptToMemoryPool
     if (!IsCoinBase())
     {
@@ -1999,7 +1999,7 @@ bool CheckDiskSpace(uint64 nAdditionalBytes)
         string strMessage = _("Warning: Disk space is low");
         strMiscWarning = strMessage;
         printf("*** %s\n", strMessage.c_str());
-        uiInterface.ThreadSafeMessageBox(strMessage, "AuroraCoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
+        uiInterface.ThreadSafeMessageBox(strMessage, "netPLN", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
         StartShutdown();
         return false;
     }
@@ -2055,7 +2055,7 @@ bool LoadBlockIndex(bool fAllowNew)
         pchMessageStart[1] = 0xc1;
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xdc;
-        hashGenesisBlock = uint256("0xc2b4cdf03c86099a0758f1c018d1a10bf05afab436c92b93b42bb88970de9821");
+        hashGenesisBlock = uint256("0x9bbed5e5b3a1448c3ccaebdf4041fb8f49cf5b5237094e3c19286dd2df590b97");
     }
 
     //
@@ -2077,7 +2077,7 @@ bool LoadBlockIndex(bool fAllowNew)
         // Genesis Block:
 
 // Genesis block
-        const char* pszTimestamp = "Visir 10. oktober 2008 Gjaldeyrishoft sett a Islendinga";
+        const char* pszTimestamp = "8/03/2014";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2089,13 +2089,13 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1390598806;
+        block.nTime    = 1394285042;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 538548;
+        block.nNonce   = 1937766;
 
         if (fTestNet)
         {
-            block.nTime    = 1390598805;             
+            block.nTime    = 1394285042;             
             block.nNonce   = 94361;
         }
 
@@ -2104,7 +2104,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
         
-		assert(block.hashMerkleRoot == uint256("0x8957e5e8d2f0e90c42e739ec62fcc5dd21064852da64b6528ebd46567f222169"));
+		assert(block.hashMerkleRoot == uint256("0x19395f79238cf065e7d0506a29edff34047e437267db4d291a5f7b165711fca8"));
 
         // If genesis block hash does not match, then generate new genesis hash.
         if (true && block.GetHash() != hashGenesisBlock)
@@ -3538,7 +3538,7 @@ CBlock* CreateNewBlock(CReserveKey& reservekey)
                 continue;
 
             // Transaction fee required depends on block size
-            // AuroraCoind: Reduce the exempted free transactions to 500 bytes (from Bitcoin's 3000 bytes)
+            // netPLNd: Reduce the exempted free transactions to 500 bytes (from Bitcoin's 3000 bytes)
             bool fAllowFree = (nBlockSize + nTxSize < 1500 || CTransaction::AllowFree(dPriority));
             int64 nMinFee = tx.GetMinFee(nBlockSize, fAllowFree, GMF_BLOCK);
 

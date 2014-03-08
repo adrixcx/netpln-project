@@ -407,7 +407,7 @@ Ste si istí, že si želáte zašifrovať peňaženku?</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="210"/>
-        <source>Send coins to an AuroraCoin address</source>
+        <source>Send coins to an netPLN address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -900,7 +900,7 @@ Adresa: %4</translation>
     </message>
     <message>
         <location filename="../messagepage.cpp" line="30"/>
-        <source>Enter an AuroraCoin address (e.g. ANS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <source>Enter an netPLN address (e.g. ANS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
         <translation>Zadajte Bitcoin adresu (napr. ANS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
     </message>
     <message>
@@ -1407,7 +1407,7 @@ Adresa: %4</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="26"/>
-        <source>Enter an AuroraCoin address (e.g. ANS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <source>Enter an netPLN address (e.g. ANS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
         <translation>Zadajte Bitcoin adresu (napr. ANS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
     </message>
 </context>
@@ -1891,7 +1891,7 @@ Adresa: %4</translation>
     </message>
     <message>
         <location filename="../verifymessagedialog.cpp" line="28"/>
-        <source>Enter AuroraCoin signature</source>
+        <source>Enter netPLN signature</source>
         <translation type="unfinished"/>
     </message>
     <message>
