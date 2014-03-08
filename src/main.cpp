@@ -29,7 +29,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x2a8e100939494904af825b488596ddd536b3a96226ad02e0f7ab7ae472b27a8e");
+uint256 hashGenesisBlock("0x1ccf5f501d2ab7cce5fe2834b26da5a92461ec01af3e330d1c059c803ac0955d");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20);
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2089,9 +2089,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1394285042;
+        block.nTime    = 1394303730;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 1937766;
+        block.nNonce   = 2732961;
 
         if (fTestNet)
         {
